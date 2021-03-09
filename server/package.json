@@ -9,9 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.1",
     "mongod": "^2.0.0",
     "mongoose": "^5.11.19",
     "nodemon": "^2.0.7"
-
   }
 }
