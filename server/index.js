@@ -1,23 +1,25 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const NotesModel = require('./model/notesSchema');
+const bodyParser = require('body-parser');
+
 
 // Create Express App for Backend 
 const app = express();
 app.use(express.json());
-
+app.use(cors())
+ 
 // Mongo Db Connection
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb+srv://Auth:auth@cluster0.d1lzh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
 
 mongoose.connection.on('connected', () => {
     console.log("Successfully Connected to Db");
-
 })
 
 mongoose.connection.on('error', () => {
     console.log("Error occur");
-
 })
 
 // Get Data 

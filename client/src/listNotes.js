@@ -2,15 +2,15 @@ import React from 'react';
 import axios from 'axios';
 
 
-const ListAllNotes = () => {
+class ListNotes extends React.Component {
+    state = {
+        Notes: []
+    };
     
 
-
+    render() {
     return(
-        <>
-        <div>
-
-        </div>
-        </>
+       
     );
+    }
 }
