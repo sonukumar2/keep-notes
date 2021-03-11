@@ -29,11 +29,11 @@ class AddNotes extends React.Component {
     render() {
         return (
             <>
-                <div className="main-note">
-                    <form onSubmit={() => this.handleSubmit()}>
-                        <input onChange={(e) => this.handleChange(e)} name="Title" value={this.state.Title} type="string" placeholder="Title" required></input>
-                        <input onChange={(e) => this.handleChange(e)} type="string" width="100px" height="200px" name="Description" value={this.state.Description} placeholder="Add Description" required></input>
-                        <button className="btn btn-primary" type="submit">Add</button>
+                <div>
+                    <form onSubmit={() => this.handleSubmit()} style = {{ display: 'grid', justifyContent:'center', marginLeft: '50px', marginRight:'50px' }} >
+                       <div> <input onChange={(e) => this.handleChange(e)} name="Title" value={this.state.Title} type="string" placeholder="Title" style = {{margin: '10px'}} required></input> </div>
+                       <div> <textarea onChange={(e) => this.handleChange(e)} type="string" width="100px" height="200px" name="Description" value={this.state.Description} style = {{margin: '10px'}} placeholder="Add Description" required></textarea>  </div>
+                       <div> <button className="btn btn-primary" type="submit" style = {{margin: '10px', display: 'flex', justifyContent:'center' }}>Add</button> </div>
                     </form>
                 </div>
 

@@ -22,7 +22,9 @@ mongoose.connection.on('error', () => {
     console.log("Error occur");
 })
 
-// Get Data 
+// ----------------------- Routing --------------------------- //
+
+// ------------- Get All Notes --------------- //
 app.get('/', async (req, res) => {
     const notes = await NotesModel.find({});
     try {
@@ -33,7 +35,7 @@ app.get('/', async (req, res) => {
     }
 })
 
-// Post Data in DB 
+// ------------- Add New Note --------------- //
 app.post('/notes', async (req, res) => {
 
     const notes = new NotesModel(req.body);
@@ -46,6 +48,7 @@ app.post('/notes', async (req, res) => {
         })
 })
 
+// ------------- Delete Note --------------- //
 app.delete('/notes/:id', async (req, res) => {
     try {
         const notes = await NotesModel.findByIdAndDelete(req.params.id);
@@ -57,6 +60,7 @@ app.delete('/notes/:id', async (req, res) => {
     }
 })
 
+// ------------- Update Note --------------- //
 app.put('/notes/:id', (req, res) => {
     const title = req.body.Title;
     const desc = req.body.Description;
@@ -77,7 +81,7 @@ app.put('/notes/:id', (req, res) => {
 })
 
 
-// Create Server 
+// -------------- Create Server ---------------- // 
 const port = 5000;
 app.listen(port, () => {
     console.log(`Server is Running at ${port}`);
